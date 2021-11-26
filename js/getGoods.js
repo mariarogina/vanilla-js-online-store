@@ -1,34 +1,6 @@
 const getGoods = () => {
   const links = document.querySelectorAll(".navigation-link");
   const more = document.querySelector(".more");
-<<<<<<< HEAD
-=======
-  const getData = (value, category) => {
-    fetch("./db/db.json")
-      .then((response) => response.json())
-      .then((data) => {
-        const array = category
-          ? data.filter((item) => item[category] === value)
-          : data;
-
-        localStorage.setItem("goods", JSON.stringify(array));
-        if (!window.location.pathname.endsWith("/goods.html")) {
-          window.location.href = "./goods.html";
-        } else {
-          renderGoods(array);
-        }
-      });
-  };
-  links.forEach((link) => {
-    link.addEventListener("click", (event) => {
-      event.preventDefault();
-      const linkValue = link.textContent;
-      const category = link.dataset.field;
-      // console.log(category);
-      getData(linkValue, category);
-    });
-  });
->>>>>>> 3b2e692c3f05bd88d045f84945332d6add6a459d
 
   const renderGoods = (goods) => {
     const goodsContainer = document.querySelector(".long-goods-list");
